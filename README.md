@@ -1,30 +1,48 @@
 # React Hooks Practice 🪝
 
-Un proyecto de práctica para aprender y dominar los hooks de React. Incluye varios componentes interactivos que demuestran diferentes conceptos de React Hooks, formularios, estado local y persistencia de datos.
+Un proyecto completo de práctica para aprender y dominar los hooks de React. Incluye **15+ componentes interactivos** que demuestran diferentes conceptos de React Hooks, desde básicos hasta avanzados: formularios, estado local, persistencia, Context API, useReducer, consumo de APIs, y más.
 
 ## 🚀 Tecnologías Utilizadas
 
-- **React 19** - Framework principal
-- **Vite** - Build tool y dev server
-- **JavaScript (ES6+)** - Lenguaje de programación
-- **CSS** - Estilos
-- **localStorage** - Persistencia de datos
+- **React 19** - Framework principal con hooks avanzados
+- **Vite** - Build tool y dev server rápido
+- **JavaScript (ES6+)** - Lenguaje de programación moderno
+- **Context API** - Estado global sin prop drilling
+- **localStorage** - Persistencia de datos del lado cliente
+- **Fetch API** - Consumo de APIs externas
+- **CSS** - Estilos modernos y responsive
 - **ESLint** - Linting y code quality
 
 ## 📁 Estructura del Proyecto
 
 ```
 src/
+├── components/         # Componentes reutilizables
+│   ├── StatsBar.jsx        # Estadísticas de usuarios
+│   ├── UserFilters.jsx     # Filtros para usuarios
+│   ├── UserForm.jsx        # Formulario de usuario
+│   └── UserTable.jsx       # Tabla de usuarios
 ├── exercises/          # Componentes principales
 │   ├── SmartCounter.jsx    # Contador inteligente
 │   ├── RegisterForm.jsx    # Formulario de registro
 │   ├── UserSearch.jsx      # Búsqueda de usuarios
-│   └── TodoApp.jsx         # Aplicación de tareas
+│   ├── TodoApp.jsx         # Aplicación de tareas
+│   ├── ThemeContextApp.jsx # Tema claro/oscuro con Context API
+│   ├── AuthContextApp.jsx  # Autenticación simulada con Context API
+│   ├── ContactForm.jsx     # Hook personalizado para formularios
+│   ├── PostList.jsx        # Consumo de API con estados de carga y error
+│   ├── UserDashboard.jsx   # Dashboard integrador de usuarios
+│   ├── FocusInput.jsx      # Input con foco automático
+│   ├── Timer.jsx           # Temporizador
+│   ├── ShoppingCart.jsx    # Carrito de compras
+│   ├── ProductFilter.jsx   # Filtro de productos
+│   ├── TaskReducer.jsx     # Gestión de tareas con useReducer
+│   └── UserList.jsx        # Lista de usuarios
 ├── hooks/             # Hooks personalizados
 │   ├── useTask.js         # Gestión de tareas con localStorage
 │   ├── useTaskState.js    # Estado del formulario de tareas
-│   ├── useFetch.js        # Hook para fetch (en desarrollo)
-│   └── useForm.js         # Hook genérico para formularios (en desarrollo)
+│   └── useLocalStorage.js # Hook para persistencia en localStorage
+│   └── useLocalStorage.js # Hook para persistencia en localStorage
 ├── App.jsx           # Componente principal
 ├── main.jsx          # Punto de entrada
 └── index.css         # Estilos globales
@@ -89,7 +107,217 @@ Aplicación completa de gestión de tareas:
 - Validación de formularios
 - Arquitectura con hooks personalizados
 
-## 🪝 Hooks Personalizados
+### 5. ThemeContextApp
+
+**Ubicación:** `src/exercises/ThemeContextApp.jsx`
+
+Sistema de tema claro/oscuro usando Context API:
+
+- **Context API** para estado global del tema
+- Alternar entre tema claro y oscuro
+- Tres componentes que reaccionan al cambio de tema
+- Indicador visual del tema actual
+- Evita prop drilling con useContext
+
+**Componentes incluidos:**
+
+- Header con indicador de tema
+- Card que cambia colores según tema
+- Botón toggle para cambiar tema
+
+### 6. AuthContextApp
+
+**Ubicación:** `src/exercises/AuthContextApp.jsx`
+
+Sistema de autenticación simulada con Context API:
+
+- Context para estado de autenticación
+- Login/logout simulado
+- Protección de rutas basada en estado
+- Gestión de usuario autenticado
+- Interfaz condicional según estado de auth
+
+### 7. ContactForm
+
+**Ubicación:** `src/exercises/ContactForm.jsx`
+
+Hook personalizado para formularios:
+
+- Hook `useForm` genérico y reutilizable
+- Validación automática de campos
+- Manejo de estado del formulario
+- Reset automático después del envío
+- Mensajes de error personalizados
+
+### 8. PostList
+
+**Ubicación:** `src/exercises/PostList.jsx`
+
+Consumo de API con manejo de estados:
+
+- Hook `useFetch` personalizado
+- Estados de carga, éxito y error
+- Fetch a API externa (JSONPlaceholder)
+- Manejo robusto de errores
+- Loading states con indicadores visuales
+
+### 9. UserDashboard
+
+**Ubicación:** `src/exercises/UserDashboard.jsx`
+
+Dashboard completo de gestión de usuarios:
+
+- **Persistencia completa con localStorage**
+- Estadísticas en tiempo real (useMemo)
+- Sistema de filtros avanzado
+- Formulario de agregar usuarios
+- Tabla interactiva con acciones
+- Arquitectura modular con componentes separados
+
+**Funcionalidades:**
+
+- Agregar nuevos usuarios
+- Activar/desactivar usuarios
+- Eliminar usuarios
+- Filtrar por nombre/email/rol/estado
+- Estadísticas automáticas
+- Datos sobreviven recargas
+
+### 10. FocusInput
+
+**Ubicación:** `src/exercises/FocusInput.jsx`
+
+Input con foco automático:
+
+- useRef para referencia al input
+- useEffect para foco automático
+- Botón para enfocar manualmente
+- Texto que muestra el valor actual
+- Demostración de manipulación del DOM
+
+### 11. Timer
+
+**Ubicación:** `src/exercises/Timer.jsx`
+
+Temporizador interactivo:
+
+- Contador con useState y useEffect
+- Intervalos con cleanup automático
+- Botones de iniciar/detener/reiniciar
+- Formato de tiempo legible
+- Prevención de memory leaks
+
+### 12. ShoppingCart
+
+**Ubicación:** `src/exercises/ShoppingCart.jsx`
+
+Carrito de compras funcional:
+
+- Lista de productos con stock
+- Agregar/quitar del carrito
+- Cálculo automático de totales
+- Gestión de inventario
+- Estados de stock (disponible/sin stock)
+
+### 13. ProductFilter
+
+**Ubicación:** `src/exercises/ProductFilter.jsx`
+
+Sistema de filtrado de productos:
+
+- Filtros por categoría y precio
+- Búsqueda por nombre
+- Resultados dinámicos
+- Interfaz intuitiva
+- Estado sincronizado
+
+### 14. TaskReducer
+
+**Ubicación:** `src/exercises/TaskReducer.jsx`
+
+Gestión de tareas con useReducer:
+
+- useReducer para estado complejo
+- Actions para agregar/editar/eliminar/completar
+- Estado centralizado
+- Patrón de reducer puro
+- Comparación con useState múltiple
+
+### 15. UserList
+
+**Ubicación:** `src/exercises/UserList.jsx`
+
+Lista de usuarios con funcionalidades:
+
+- Fetch de datos de API externa
+- Estados de carga y error
+- Filtrado y búsqueda
+- Interfaz responsive
+- Manejo de datos asíncronos
+
+## � Componentes Reutilizables
+
+### StatsBar
+
+**Ubicación:** `src/components/StatsBar.jsx`
+
+Componente de estadísticas para el dashboard:
+
+- Estadísticas calculadas automáticamente
+- Diseño visual con colores diferenciados
+- Total, activos, inactivos y administradores
+- Layout responsive con flexbox
+
+### UserFilters
+
+**Ubicación:** `src/components/UserFilters.jsx`
+
+Sistema de filtros para usuarios:
+
+- Búsqueda por nombre o email
+- Filtro por rol (select dropdown)
+- Filtro por estado (activo/inactivo)
+- Interfaz unificada y responsive
+
+### UserForm
+
+**Ubicación:** `src/components/UserForm.jsx`
+
+Formulario para agregar usuarios:
+
+- Validación completa de campos
+- Estados de error específicos
+- Reset automático después del envío
+- Campos: nombre, email, rol, estado activo
+
+### UserTable
+
+**Ubicación:** `src/components/UserTable.jsx`
+
+Tabla interactiva de usuarios:
+
+- Renderizado condicional de filas
+- Botones de acción (activar/desactivar/eliminar)
+- Estados visuales diferenciados
+- Callbacks para acciones del padre
+
+### useLocalStorage
+
+**Archivo:** `src/hooks/useLocalStorage.js`
+
+Hook para persistencia automática en localStorage:
+
+```jsx
+const [value, setValue] = useLocalStorage(key, initialValue);
+```
+
+**Funcionalidades:**
+
+- Sincronización automática con localStorage
+- Estado local y persistencia simultánea
+- Manejo robusto de errores
+- Inicialización desde localStorage
+- Actualización bidireccional
 
 ### useTask
 
@@ -183,10 +411,35 @@ npm run lint
 
 ### Persistencia de Datos
 
-- **localStorage** para TodoApp
+- **localStorage** para TodoApp y UserDashboard
+- Hook `useLocalStorage` personalizado y reutilizable
 - Datos sobreviven recargas de página
 - Manejo robusto de errores
-- Logs de debug en consola
+- Sincronización automática estado-almacenamiento
+
+### Context API
+
+- Tema claro/oscuro global
+- Autenticación simulada
+- Estado global sin prop drilling
+- useContext para consumo de contextos
+- Proveedores centralizados
+
+### Gestión de Estado Avanzada
+
+- useReducer para estado complejo
+- Context API para estado global
+- Custom hooks para lógica reutilizable
+- Estados derivados con useMemo
+- Optimización de re-renders
+
+### Consumo de APIs
+
+- Hook `useFetch` personalizado
+- Estados de carga, éxito y error
+- Manejo de errores robusto
+- Loading states visuales
+- Fetch a APIs externas
 
 ### Validación de Formularios
 
@@ -194,6 +447,7 @@ npm run lint
 - Mensajes de error específicos
 - Estados visuales (colores, estilos)
 - Prevención de envíos inválidos
+- Hooks personalizados para formularios
 
 ### Arquitectura de Hooks
 
@@ -201,6 +455,7 @@ npm run lint
 - Reutilización de lógica
 - Estado centralizado
 - Efectos secundarios manejados
+- Composición de hooks
 
 ### Responsive Design
 
@@ -210,27 +465,60 @@ npm run lint
 
 ## 📚 Conceptos Aprendidos
 
+### Hooks Básicos
+
 - ✅ `useState` - Gestión de estado local
 - ✅ `useEffect` - Efectos secundarios
+- ✅ `useRef` - Referencias al DOM
+- ✅ `useMemo` - Memorización de valores
+- ✅ `useCallback` - Memorización de funciones
+
+### Hooks Avanzados
+
+- ✅ `useReducer` - Estado complejo con actions
+- ✅ `useContext` - Consumo de Context API
 - ✅ Custom Hooks - Lógica reutilizable
+
+### Context API
+
+- ✅ `createContext` - Creación de contextos
+- ✅ `Context.Provider` - Proveedores de contexto
+- ✅ `useContext` - Hook para consumir contexto
+- ✅ Estado global sin prop drilling
+
+### Formularios y Validación
+
 - ✅ Formularios controlados
-- ✅ Validación de datos
+- ✅ Validación de datos en tiempo real
+- ✅ Estados de error y éxito
+- ✅ Manejo de eventos de formulario
+
+### Persistencia y APIs
+
 - ✅ localStorage API
-- ✅ Manejo de eventos
-- ✅ Props y estado
+- ✅ Fetch API con async/await
+- ✅ Manejo de estados de carga
+- ✅ Tratamiento de errores
+
+### Arquitectura y Patrones
+
 - ✅ Componentes funcionales
-- ✅ JSX y expresiones
+- ✅ Props y estado
+- ✅ Composición vs herencia
+- ✅ Separación de responsabilidades
+- ✅ Reutilización de componentes
 
 ## 🔧 Próximas Mejoras
 
-- [ ] Completar hooks `useFetch` y `useForm`
 - [ ] Añadir tests unitarios
 - [ ] Implementar TypeScript
 - [ ] Añadir routing con React Router
-- [ ] Conectar con API real
-- [ ] Añadir autenticación
-- [ ] Tema oscuro/claro
+- [ ] Conectar con API real (backend propio)
+- [ ] Añadir más temas (no solo claro/oscuro)
 - [ ] PWA (Progressive Web App)
+- [ ] Internacionalización (i18n)
+- [ ] Tema del sistema automático
+- [ ] Modo offline con Service Workers
 
 ## 📝 Notas de Desarrollo
 

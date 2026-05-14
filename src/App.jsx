@@ -10,6 +10,11 @@ import ShoppingCart from './exercises/ShoppingCart'
 import ProductFilter from './exercises/ProductFilter'
 import FocusInput from './exercises/FocusInput'
 import TaskReducer from './exercises/TaskReducer'
+import ThemeApp from './exercises/ThemeContextApp'
+import AuthApp from './exercises/AuthContextApp'
+import ContactForm from './exercises/ContactForm'
+import PostList from './exercises/PostList'
+import DashboardUsers from './exercises/UserDashboard'
 
 function App() {
 
@@ -27,6 +32,11 @@ function App() {
       <ProductFilter />
       <FocusInput />
       <TaskReducer />
+      <ThemeApp />
+      <AuthApp />
+      <ContactForm />
+      <PostList />
+      <DashboardUsers />
     </>
   )
 }

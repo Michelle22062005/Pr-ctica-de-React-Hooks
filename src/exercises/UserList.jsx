@@ -43,7 +43,7 @@ export default function UserList() {
     return(
         <div style={{border: "1px solid #ccc", padding: "15px", borderRadius: "5px", margin: "20px auto", maxWidth: "500px"
         }}>
-            <h2>Lista de Usuarios</h2>
+            <h2>Consumo de API con estados de carga y error</h2>
             <ul>{users.slice(0,8).map((user)=>(
                 <li key={user.id}>{user.name} - {user.email} - {user.address.city}</li>
             ))}</ul>
